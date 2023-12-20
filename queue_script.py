@@ -1,4 +1,5 @@
 from queue import Queue
+import time
 import uuid
 
 
@@ -18,6 +19,11 @@ def process_request():
         print("Queue is empty.")
 
 
-while True:
-    generate_request()
-    process_request()
+try:
+    while True:
+        generate_request()
+        time.sleep(2)
+        process_request()
+        time.sleep(3)
+except KeyboardInterrupt:
+    print("Bye!")
