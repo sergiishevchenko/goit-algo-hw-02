@@ -2,6 +2,8 @@ from collections import deque
 
 
 def is_palindrome(string):
+    string = "".join(el.lower() for el in string if el.isalnum())
+
     string_deque = deque(string)
 
     while len(string_deque) > 1:
